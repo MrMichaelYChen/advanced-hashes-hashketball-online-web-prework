@@ -63,7 +63,7 @@ def game_hash
       team_name: "Charlotte Hotnets",
       colors: ["Turquoise", "Purple"],
       players: {
-        "Jess Adrien" => {
+        "Jeff Adrien" => {
           number: 4,
           shoe: 18,
           points: 10,
@@ -140,19 +140,14 @@ good_practices
 
 def num_points_scored(name)
   game_hash.each do |location, team_data|
-    team_data.each do |attribute, data|
-  if attribute == :players
-    data.collect do |player, pdata|
-       if player == name
-      pdata.each do |metrics, values|
-        if metrics == :points
-          #binding.pry
-          return values.to_i
-   end
+    #binding.pry
+    team_data[:players].each do |attribute, data|
+    #  binding.pry
+      if name == attribute
+    #    binding.pry
+        data[:points]
+      end
+    end
   end
 end
-end
-end
-end
-end
-end
+#
