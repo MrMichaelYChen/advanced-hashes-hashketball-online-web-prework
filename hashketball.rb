@@ -146,7 +146,7 @@ def num_points_scored(name)
     #  binding.pry
       if name == attribute
     #    binding.pry
-        points = data[:points]
+        points = data[:points].to_i
       end
     end
   end
