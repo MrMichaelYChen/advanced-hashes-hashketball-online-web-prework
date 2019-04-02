@@ -140,10 +140,19 @@ good_practices
 
 def num_points_scored(name)
   game_hash.each do |location, team_data|
-    team_data[:players].each do |players, stats|
-      if name == players
-        return stats[:points]
-      end
-    end
+    team_data.each do |attribute, data|
+  if attribute == :players 
+    data.collect do |player, pdata|
+       if player == name
+      pdata.each do |metrics, values|
+        if metrics == :points
+          #binding.pry
+          return values.to_i
+   end
   end
+end
+end
+end
+end
+end
 end
